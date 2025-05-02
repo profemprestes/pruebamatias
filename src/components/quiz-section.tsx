@@ -1,3 +1,4 @@
+
 'use client';
 
 import type React from 'react';
@@ -17,7 +18,7 @@ interface Question {
 }
 
 const questions: Question[] = [
-  { id: 1, text: '¿Cuál es mi color favorito?', options: ['Azul Cielo', 'Rosa Chicle', 'Amarillo Sol'], correctAnswer: 'Azul Cielo' },
+  { id: 1, text: '¿Cuál es el mejor equipo de futbol del mundo?', options: ['Nacional', 'Peñarol', 'Otros'], correctAnswer: 'Nacional' },
   { id: 2, text: '¿Cuántos años cumplo?', options: ['4', '5', '6'], correctAnswer: '5' },
   { id: 3, text: '¿En qué mes es mi cumpleaños?', options: ['Junio', 'Julio', 'Agosto'], correctAnswer: 'Julio' },
   { id: 4, text: '¿Cuál es mi superhéroe favorito?', options: ['Spiderman', 'Batman', 'Superman'], correctAnswer: 'Spiderman' },
