@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
-  title: 'Fiesta Kiddo - Kiddo Quizvite', // Updated title
+  title: 'Invitacion a Cumple', // Updated title
   description: '¡Responde algunas preguntas para ver la invitación!',
 };
 

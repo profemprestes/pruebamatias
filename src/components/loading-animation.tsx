@@ -1,31 +1,33 @@
 'use client';
 import type React from 'react';
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import { PartyPopper, Gift } from 'lucide-react'; // Using Lucide icons
 
-const LoadingAnimation: React.FC = () => {
-  const [confettiPieces, setConfettiPieces] = useState<React.ReactNode[]>([]);
-  const colors = ['#FFD700', '#1E90FF', '#FF69B4', '#32CD32', '#FF4500']; // Yellow, Blue, Pink, Green, Orange
+const colors = ['#FFD700', '#1E90FF', '#FF69B4', '#32CD32', '#FF4500']; // Yellow, Blue, Pink, Green, Orange
 
-  useEffect(() => {
-    const generateConfetti = () => {
-      const pieces = [];
-      for (let i = 0; i < 50; i++) { // Generate 50 confetti pieces
+const generateConfetti = () => {
+    const pieces: React.ReactNode[] = [];
+    for (let i = 0; i < 50; i++) {
         const color = colors[Math.floor(Math.random() * colors.length)];
         const style: React.CSSProperties = {
-          left: `${Math.random() * 100}%`,
-          animationDelay: `${Math.random() * 2}s`,
-          '--confetti-color': color,
-        } as React.CSSProperties;
+            left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 2}s`,
+            '--confetti-color': color,
+        };
         pieces.push(<div key={i} className="confetti" style={style}></div>);
-      }
-      setConfettiPieces(pieces);
-    };
+    }
+    return pieces;
+};
 
-    generateConfetti();
-    // Cleanup function if needed
-    // return () => {};
-  }, [colors]); // Re-run if colors change (they won't here, but good practice)
+
+const LoadingAnimation: React.FC = () => {
+    const confettiPieces = useMemo(() => {
+        return generateConfetti();
+    }, []);
+    
+   
+    
+   
 
 
   return (
