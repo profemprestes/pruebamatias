@@ -10,11 +10,11 @@ const generateConfetti = () => {
     for (let i = 0; i < 50; i++) {
         const color = colors[Math.floor(Math.random() * colors.length)];
         const style: React.CSSProperties = {
-            left: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`, 
             animationDelay: `${Math.random() * 2}s`,
             '--confetti-color': color,
-        };
-        pieces.push(<div key={i} className="confetti" style={style}></div>);
+        } as React.CSSProperties & { '--confetti-color': string }; // Type assertion here
+        pieces.push(<div key={i} className="confetti" style={style} ></div>);
     }
     return pieces;
 };
