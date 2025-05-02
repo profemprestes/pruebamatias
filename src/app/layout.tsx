@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es"> {/* Set language to Spanish */}
+    <html lang="es">{/* Set language to Spanish */}
       <body className={`${poppins.variable} font-sans antialiased`}> {/* Use Poppins */}
         {children}
         <Toaster /> {/* Add Toaster for notifications */}
