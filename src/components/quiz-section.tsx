@@ -19,7 +19,7 @@ interface Question {
 
 const questions: Question[] = [
   { id: 1, text: '¿Cuál es el mejor equipo de futbol del mundo?', options: ['Nacional', 'Peñarol', 'Otros'], correctAnswer: 'Nacional' },
-  { id: 2, text: '¿Cuántos años cumplo?', options: ['4', '5', '6'], correctAnswer: '5' },
+  { id: 2, text: 'Cual es el mejor equio de basquet', options: ['Nacional', 'Goes', 'Aguada'], correctAnswer: 'Goes' }, // Changed question
   { id: 3, text: '¿En qué mes es mi cumpleaños?', options: ['Junio', 'Julio', 'Agosto'], correctAnswer: 'Julio' },
   { id: 4, text: '¿Cuál es mi superhéroe favorito?', options: ['Spiderman', 'Batman', 'Superman'], correctAnswer: 'Spiderman' },
   { id: 5, text: '¿Qué me gusta más comer?', options: ['Pizza', 'Helado', 'Pastel'], correctAnswer: 'Pizza' },
@@ -140,3 +140,4 @@ const QuizSection: React.FC<QuizSectionProps> = ({ onQuizComplete }) => {
 };
 
 export default QuizSection;
+
