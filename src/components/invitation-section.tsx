@@ -25,7 +25,7 @@ const InvitationSection: React.FC = () => {
         >
           <CardHeader className="p-6 md:p-10">
             <CardTitle className="text-4xl md:text-5xl font-bold text-primary-foreground drop-shadow-md">
-              ¡Hola! Soy Leo
+              Hola soy Matias
             </CardTitle>
           </CardHeader>
           <CardContent className="p-6 md:p-8 space-y-4">
