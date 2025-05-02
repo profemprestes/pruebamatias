@@ -31,7 +31,7 @@ const InvitationSection: React.FC = () => {
           <CardContent className="p-6 md:p-8 space-y-4">
             <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto rounded-full overflow-hidden border-4 border-primary-foreground shadow-lg">
               <Image
-                src="https://picsum.photos/300/300" // Placeholder image
+                src="/goessinfondo.svg" // Placeholder image
                 alt="Foto del Cumpleañero"
                 layout="fill"
                 objectFit="cover"
