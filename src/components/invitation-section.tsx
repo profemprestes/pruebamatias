@@ -63,7 +63,7 @@ const InvitationSection: React.FC = () => {
             <CardContent className="p-6 space-y-6">
               <div className="flex items-center space-x-3">
                 <Calendar className="h-6 w-6 text-primary" />
-                <span className="text-lg text-foreground"><strong className="font-semibold">Fecha:</strong> Sábado, 20 de Julio</span>
+                <span className="text-lg text-foreground"><strong className="font-semibold">Fecha:</strong> Domingo, 1 de Febrero</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="h-6 w-6 text-primary" />
@@ -94,11 +94,11 @@ const InvitationSection: React.FC = () => {
                   <div className="grid gap-4 py-4">
                     <div className="flex items-center space-x-3">
                        <Users className="h-5 w-5 text-primary" />
-                       <span className="text-base text-popover-foreground"><strong className="font-medium">Padres:</strong> Ana y Juan Pérez</span>
+                       <span className="text-base text-popover-foreground"><strong className="font-medium">Padres:</strong> Ana y Puchero</span>
                     </div>
                      <div className="flex items-center space-x-3">
                        <Phone className="h-5 w-5 text-primary" />
-                       <span className="text-base text-popover-foreground"><strong className="font-medium">Contacto:</strong> +12 345 6789</span>
+                       <span className="text-base text-popover-foreground"><strong className="font-medium">Contacto:</strong> +598 097......</span>
                     </div>
                   </div>
                 </DialogContent>
