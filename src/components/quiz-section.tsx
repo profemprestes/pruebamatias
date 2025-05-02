@@ -22,7 +22,7 @@ const questions: Question[] = [
   { id: 2, text: '¿Cuál es el mejor equipo de basquet?', options: ['Nacional', 'Goes', 'Aguada'], correctAnswer: 'Goes' },
   { id: 3, text: '¿Cuál es mi bebida favorita?', options: ['Cerveza', 'Vino', 'Fernet'], correctAnswer: 'Fernet' }, // Changed question and options
   { id: 4, text: '¿Cuál es mi superhéroe favorito?', options: ['Spiderman', 'Batman', 'Superman'], correctAnswer: 'Spiderman' },
-  { id: 5, text: '¿Qué me gusta más comer?', options: ['Pizza', 'Helado', 'Pastel'], correctAnswer: 'Pizza' },
+  { id: 5, text: '¿Qué me gusta más comer?', options: ['Pizza', 'Asado', 'Pastel'], correctAnswer: 'Asado' },
   { id: 6, text: '¿Dónde será la fiesta?', options: ['Parque', 'Mi Casa', 'Salón de Fiestas'], correctAnswer: 'Mi Casa' },
 ];
 
@@ -118,7 +118,7 @@ const QuizSection: React.FC<QuizSectionProps> = ({ onQuizComplete }) => {
   return (
     <Card className="w-full max-w-md shadow-xl bg-card animate-pulse-subtle">
       <CardHeader className="text-center bg-primary text-primary-foreground p-4 rounded-t-lg">
-        <CardTitle className="text-3xl font-bold">Fiesta Kiddo</CardTitle>
+        <CardTitle className="text-3xl font-bold">Fiesta Matias</CardTitle>
         <CardDescription className="text-primary-foreground/90 pt-1">¡Responde algunas preguntas para ver la invitación!</CardDescription>
       </CardHeader>
       <CardContent className="p-6 space-y-6">
