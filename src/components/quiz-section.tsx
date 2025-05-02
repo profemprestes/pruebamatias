@@ -19,8 +19,8 @@ interface Question {
 
 const questions: Question[] = [
   { id: 1, text: '¿Cuál es el mejor equipo de futbol del mundo?', options: ['Nacional', 'Peñarol', 'Otros'], correctAnswer: 'Nacional' },
-  { id: 2, text: 'Cual es el mejor equio de basquet', options: ['Nacional', 'Goes', 'Aguada'], correctAnswer: 'Goes' }, // Changed question
-  { id: 3, text: '¿En qué mes es mi cumpleaños?', options: ['Junio', 'Julio', 'Agosto'], correctAnswer: 'Julio' },
+  { id: 2, text: '¿Cuál es el mejor equipo de basquet?', options: ['Nacional', 'Goes', 'Aguada'], correctAnswer: 'Goes' },
+  { id: 3, text: '¿Cuál es mi bebida favorita?', options: ['Cerveza', 'Vino', 'Fernet'], correctAnswer: 'Fernet' }, // Changed question and options
   { id: 4, text: '¿Cuál es mi superhéroe favorito?', options: ['Spiderman', 'Batman', 'Superman'], correctAnswer: 'Spiderman' },
   { id: 5, text: '¿Qué me gusta más comer?', options: ['Pizza', 'Helado', 'Pastel'], correctAnswer: 'Pizza' },
   { id: 6, text: '¿Dónde será la fiesta?', options: ['Parque', 'Mi Casa', 'Salón de Fiestas'], correctAnswer: 'Mi Casa' },
@@ -75,9 +75,30 @@ const QuizSection: React.FC<QuizSectionProps> = ({ onQuizComplete }) => {
     }
 
     // Check if quiz should end
-    if (currentQuestionIndex === questions.length - 1 || correctAnswersCount + (isCorrect ? 1 : 0) >= 3) {
-      if (correctAnswersCount + (isCorrect ? 1 : 0) >= 3) {
-        toast({
+    const potentialCorrectAnswers = correctAnswersCount + (isCorrect ? 1 : 0);
+
+    if (currentQuestionIndex === questions.length - 1 ) {
+        if (potentialCorrectAnswers >= 3) {
+            toast({
+              title: "¡Genial!",
+              description: "¡Has respondido suficientes preguntas correctamente!",
+              className: "bg-primary text-primary-foreground",
+              duration: 3000,
+
+            });
+             setTimeout(onQuizComplete, 1500); // Give time for the last toast
+          } else {
+             toast({
+               title: "¡Casi!",
+               description: "No has acertado suficientes. Intenta de nuevo más tarde.",
+               variant: "destructive",
+                duration: 3000,
+             });
+             // Optionally reset quiz or block access here
+             // For this prototype, we'll just prevent moving forward.
+          }
+    } else if (potentialCorrectAnswers >= 3) {
+         toast({
           title: "¡Genial!",
           description: "¡Has respondido suficientes preguntas correctamente!",
           className: "bg-primary text-primary-foreground",
@@ -85,17 +106,9 @@ const QuizSection: React.FC<QuizSectionProps> = ({ onQuizComplete }) => {
 
         });
          setTimeout(onQuizComplete, 1500); // Give time for the last toast
-      } else {
-         toast({
-           title: "¡Casi!",
-           description: "No has acertado suficientes. Intenta de nuevo más tarde.",
-           variant: "destructive",
-            duration: 3000,
-         });
-         // Optionally reset quiz or block access here
-         // For this prototype, we'll just prevent moving forward.
-      }
-    } else {
+
+    }
+    else {
       // Move to next question
       setCurrentQuestionIndex((prev) => prev + 1);
     }
@@ -140,4 +153,3 @@ const QuizSection: React.FC<QuizSectionProps> = ({ onQuizComplete }) => {
 };
 
 export default QuizSection;
-
